@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kashi Yatra - बुकिंग</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0; padding: 0;
+            background-color: #f9f7f1;
+            color: #333;
+        }
+        header {
+            background-color: #6b4226;
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            padding: 30px 40px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 6px;
+            box-shadow: 0 0 10px #ccc;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 1px solid #aaa;
+            box-sizing: border-box;
+        }
+        button {
+            margin-top: 20px;
+            padding: 12px 20px;
+            background-color: #6b4226;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #553314;
+        }
+        footer {
+            background-color: #6b4226;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Kashi Yatra</h1>
+        <nav>
+            <a href="index.html">होम</a>
+            <a href="booking.html">बुकिंग</a>
+            <a href="login.html">लॉगिन/रजिस्टर</a>
+            <a href="about.html">अबाउट</a>
+            <a href="contact.html">संपर्क करें</a>
+        </nav>
+    </header>
+    <main>
+        <h2>बुकिंग फॉर्म</h2>
+        <form>
+            <label for="name">पूरा नाम:</label>
+            <input type="text" id="name" name="name" required />
+
+            <label for="email">ईमेल:</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="phone">फ़ोन नंबर:</label>
+            <input type="tel" id="phone" name="phone" required />
+
+            <label for="checkin">चेक-इन तारीख:</label>
+            <input type="date" id="checkin" name="checkin" required />
+
+            <label for="checkout">चेक-आउट तारीख:</label>
+            <input type="date" id="checkout" name="checkout" required />
+
+            <label for="roomtype">रूम का प्रकार:</label>
+            <select id="roomtype" name="roomtype" required>
+                <option value="">चुनें</option>
+                <option value="single">सिंगल रूम</option>
+                <option value="double">डबल रूम</option>
+                <option value="suite">सूट</option>
+            </select>
+
+            <button type="submit">बुक करें</button>
+        </form>
+    </main>
+    <footer>
+        &copy; 2025 Kashi Yatra. सभी अधिकार सुरक्षित।
+    </footer>
+</body>
+</html>

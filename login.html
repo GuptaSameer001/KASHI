@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kashi Yatra - लॉगिन / रजिस्टर</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0; padding: 0;
+            background-color: #f9f7f1;
+            color: #333;
+        }
+        header {
+            background-color: #6b4226;
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            padding: 30px 40px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 6px;
+            box-shadow: 0 0 10px #ccc;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 1px solid #aaa;
+            box-sizing: border-box;
+        }
+        button {
+            margin-top: 20px;
+            padding: 12px 20px;
+            background-color: #6b4226;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #553314;
+        }
+        .toggle {
+            margin-top: 10px;
+            text-align: center;
+        }
+        .toggle a {
+            color: #6b4226;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        footer {
+            background-color: #6b4226;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 40px;
+        }
+    </style>
+    <script>
+        function toggleForms() {
+            const loginForm = document.getElementById('loginForm');
+            const registerForm = document.getElementById('registerForm');
+            if (loginForm.style.display === 'none') {
+                loginForm.style.display = 'block';
+                registerForm.style.display = 'none';
+            } else {
+                loginForm.style.display = 'none';
+                registerForm.style.display = 'block';
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Kashi Yatra</h1>
+        <nav>
+            <a href="index.html">होम</a>
+            <a href="booking.html">बुकिंग</a>
+            <a href="login.html">लॉगिन/रजिस्टर</a>
+            <a href="about.html">अबाउट</a>
+            <a href="contact.html">संपर्क करें</a>
+        </nav>
+    </header>
+    <main>
+        <!-- Login Form -->
+        <form id="loginForm" action="#" method="post">
+            <h2>लॉगिन</h2>
+            <label for="loginEmail">ईमेल:</label>
+            <input type="email" id="loginEmail" name="loginEmail" required />
+
+            <label for="loginPassword">पासवर्ड:</label>
+            <input type="password" id="loginPassword" name="loginPassword" required />
+
+            <button type="submit">लॉगिन करें</button>
+            <div class="toggle">
+                नया उपयोगकर्ता? <a onclick="toggleForms()">रजिस्टर करें</a>
+            </div>
+        </form>
+
+        <!-- Register Form -->
+        <form id="registerForm" action="#" method="post" style="display:none;">
+            <h2>रजिस्टर</h2>
+            <label for="registerName">पूरा नाम:</label>
+            <input type="text" id="registerName" name="registerName" required />
+
+            <label for="registerEmail">ईमेल:</label>
+            <input type="email" id="registerEmail" name="registerEmail" required />
+
+            <label for="registerPassword">पासवर्ड:</label>
+            <input type="password" id="registerPassword" name="registerPassword" required />
+
+            <button type="submit">रजिस्टर करें</button>
+            <div class="toggle">
+                पहले से उपयोगकर्ता? <a onclick="toggleForms()">लॉगिन करें</a>
+            </div>
+        </form>
+    </main>
+    <footer>
+        &copy; 2025 Kashi Yatra. सभी अधिकार सुरक्षित।
+    </footer>
+</body>
+</html>
