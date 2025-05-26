@@ -1,94 +1,182 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Kashi Yatra - होटल यात्रा</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0; padding: 0;
-            background-color: #f9f7f1;
-            color: #333;
-        }
-        header {
-            background-color: #6b4226;
-            color: white;
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        header h1 {
-            margin: 0;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: bold;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .hero {
-            background: url(https://unsplash.com/photos/dark-blue-background-with-sparkling-specks-and-streaks-E0JDAwwaCvI) no-repeat center center/cover;
-            height: 400px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 2.5rem;
-            font-weight: bold;
-            text-shadow: 2px 2px 5px #000;
-        }
-        main {
-            padding: 30px 40px;
-        }
-        footer {
-            background-color: #6b4226;
-            color: white;
-            text-align: center;
-            padding: 15px 0;
-            margin-top: 40px;
-        }
-        .social-icons a {
-            margin: 0 10px;
-            color: white;
-            font-size: 24px;
-            text-decoration: none;
-        }
-    </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kashi Yatra | Spiritual Travel Packages</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Open Sans', sans-serif;
+    }
+    body {
+      background-color: #fefaf3;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(to right, #e9a85c, #db7830);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      color: white;
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+    }
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 600;
+    }
+    .lang-auth button {
+      margin-left: 0.5rem;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .lang-auth .register { background-color: #d35400; color: #fff; }
+    .lang-auth .login { background-color: #a04000; color: #fff; }
+
+    .hero {
+      background: url('https://upload.wikimedia.org/wikipedia/commons/e/e3/Varanasi_Ghat_with_Shiva_Statue.jpg') no-repeat center center/cover;
+      padding: 5rem 2rem;
+      color: #fff;
+      text-align: left;
+      position: relative;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-family: 'Playfair Display', serif;
+    }
+    .hero p {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+    }
+    .hero .cta-button {
+      margin-top: 2rem;
+      background-color: #c0392b;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .section {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+    .packages {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .package {
+      width: 250px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      background-color: #fff;
+    }
+    .package img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .package-title {
+      background-color: #d35400;
+      color: white;
+      padding: 1rem;
+      font-weight: bold;
+    }
+    .reviews {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .review {
+      width: 300px;
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .stars {
+      color: #e67e22;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Kashi Yatra</h1>
-        <nav>
-            <a href="#">होम</a>
-            <a href="#">बुकिंग</a>
-            <a href="#">लॉगिन/रजिस्टर</a>
-            <a href="#">अबाउट</a>
-            <a href="#">संपर्क करें</a>
-        </nav>
-    </header>
-    <section class="hero">
-        आपकी होटल यात्रा का सही साथी
-    </section>
-    <main>
-        <h2>हमारे बारे में</h2>
-        <p>
-            Kashi Yatra आपके लिए लाता है सबसे आरामदायक और यादगार होटल यात्रा अनुभव।  
-            धार्मिक स्थलों के नज़दीक सर्वोत्तम होटल्स की बुकिंग करें, और यात्रा को बनाएं खास।
-        </p>
-        <div class="social-icons">
-            <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-            <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-        </div>
-    </main>
-    <footer>
-        &copy; 2025 Kashi Yatra. सभी अधिकार सुरक्षित।
-    </footer>
+  <header>
+    <div class="logo">KA YATRA</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Travel Packages</a>
+      <a href="#">Hotels</a>
+      <a href="#">Contact Us</a>
+    </nav>
+    <div class="lang-auth">
+      <button>EN</button>
+      <button class="register">Register</button>
+      <button class="login">Login</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>KASHI YATRA</h1>
+    <h3>SPIRITUAL TRAVEL PACKAGES</h3>
+    <p>Experience the divine with our comfortable and well-planned tours.</p>
+    <button class="cta-button">BOOK NOW</button>
+  </section>
+
+  <section class="section">
+    <h2>OUR PACKAGES</h2>
+    <div class="packages">
+      <div class="package">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/Varanasi_ghats.jpg" alt="Varanasi Tour">
+        <div class="package-title">Varanasi Tour</div>
+      </div>
+      <div class="package">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Sangam_Allahabad.jpg" alt="Prayagraj Tour">
+        <div class="package-title">Prayagraj Tour</div>
+      </div>
+      <div class="package">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Ayodhya_Ram_Mandir.jpg" alt="Ayodhya Tour">
+        <div class="package-title">Ayodhya Tour</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>REVIEWS</h2>
+    <div class="reviews">
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>“The trip was well organized and truly memorable!”</p>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>“The experience was divine and peaceful.”</p>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
