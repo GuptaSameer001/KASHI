@@ -19,6 +19,7 @@
     header {
       background: linear-gradient(to right, #e9a85c, #db7830);
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
@@ -34,16 +35,21 @@
       color: #fff;
       font-weight: 600;
     }
+    .lang-auth {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .lang-auth select,
     .lang-auth button {
-      margin-left: 0.5rem;
       padding: 0.5rem 1rem;
       border: none;
       border-radius: 4px;
       cursor: pointer;
       font-weight: bold;
     }
-    .lang-auth .register { background-color: #d35400; color: #fff; }
-    .lang-auth .login { background-color: #a04000; color: #fff; }
+    .register { background-color: #d35400; color: #fff; }
+    .login { background-color: #a04000; color: #fff; }
 
     .hero {
       background: url('https://upload.wikimedia.org/wikipedia/commons/e/e3/Varanasi_Ghat_with_Shiva_Statue.jpg') no-repeat center center/cover;
@@ -122,6 +128,14 @@
       font-size: 1.2rem;
       margin-bottom: 1rem;
     }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .packages, .reviews {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
   </style>
 </head>
 <body>
@@ -134,49 +148,90 @@
       <a href="#">Contact Us</a>
     </nav>
     <div class="lang-auth">
-      <button>EN</button>
-      <button class="register">Register</button>
-      <button class="login">Login</button>
+      <select id="language-switch">
+        <option value="en">EN</option>
+        <option value="hi">हिंदी</option>
+      </select>
+      <button class="register" onclick="location.href='register.html'">Register</button>
+      <button class="login" onclick="location.href='login.html'">Login</button>
     </div>
   </header>
 
   <section class="hero">
-    <h1>KASHI YATRA</h1>
-    <h3>SPIRITUAL TRAVEL PACKAGES</h3>
-    <p>Experience the divine with our comfortable and well-planned tours.</p>
-    <button class="cta-button">BOOK NOW</button>
+    <h1 id="title">KASHI YATRA</h1>
+    <h3 id="subtitle">SPIRITUAL TRAVEL PACKAGES</h3>
+    <p id="tagline">Experience the divine with our comfortable and well-planned tours.</p>
+    <button class="cta-button" onclick="location.href='booking.html'">BOOK NOW</button>
   </section>
 
   <section class="section">
-    <h2>OUR PACKAGES</h2>
+    <h2 id="our-packages">OUR PACKAGES</h2>
     <div class="packages">
       <div class="package">
         <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/Varanasi_ghats.jpg" alt="Varanasi Tour">
-        <div class="package-title">Varanasi Tour</div>
+        <div class="package-title" id="varanasi">Varanasi Tour</div>
       </div>
       <div class="package">
         <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Sangam_Allahabad.jpg" alt="Prayagraj Tour">
-        <div class="package-title">Prayagraj Tour</div>
+        <div class="package-title" id="prayagraj">Prayagraj Tour</div>
       </div>
       <div class="package">
         <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Ayodhya_Ram_Mandir.jpg" alt="Ayodhya Tour">
-        <div class="package-title">Ayodhya Tour</div>
+        <div class="package-title" id="ayodhya">Ayodhya Tour</div>
       </div>
     </div>
   </section>
 
   <section class="section">
-    <h2>REVIEWS</h2>
+    <h2 id="reviews-title">REVIEWS</h2>
     <div class="reviews">
       <div class="review">
         <div class="stars">★★★★★</div>
-        <p>“The trip was well organized and truly memorable!”</p>
+        <p id="review1">“The trip was well organized and truly memorable!”</p>
       </div>
       <div class="review">
         <div class="stars">★★★★★</div>
-        <p>“The experience was divine and peaceful.”</p>
+        <p id="review2">“The experience was divine and peaceful.”</p>
       </div>
     </div>
   </section>
+
+  <script>
+    const translations = {
+      en: {
+        title: "KASHI YATRA",
+        subtitle: "SPIRITUAL TRAVEL PACKAGES",
+        tagline: "Experience the divine with our comfortable and well-planned tours.",
+        "our-packages": "OUR PACKAGES",
+        varanasi: "Varanasi Tour",
+        prayagraj: "Prayagraj Tour",
+        ayodhya: "Ayodhya Tour",
+        "reviews-title": "REVIEWS",
+        review1: "The trip was well organized and truly memorable!",
+        review2: "The experience was divine and peaceful."
+      },
+      hi: {
+        title: "काशी यात्रा",
+        subtitle: "आध्यात्मिक यात्रा पैकेज",
+        tagline: "हमारी आरामदायक और अच्छी योजना वाली यात्राओं के साथ दिव्यता का अनुभव करें।",
+        "our-packages": "हमारे पैकेज",
+        varanasi: "वाराणसी यात्रा",
+        prayagraj: "प्रयागराज यात्रा",
+        ayodhya: "अयोध्या यात्रा",
+        "reviews-title": "समीक्षाएं",
+        review1: "यात्रा अच्छी तरह से आयोजित थी और वास्तव में यादगार रही!",
+        review2: "अनुभव दिव्य और शांतिपूर्ण था।"
+      }
+    };
+
+    document.getElementById('language-switch').addEventListener('change', function () {
+      const lang = this.value;
+      const keys = Object.keys(translations[lang]);
+      keys.forEach(key => {
+        const el = document.getElementById(key);
+        if (el) el.textContent = translations[lang][key];
+      });
+    });
+  </script>
 </body>
 </html>
