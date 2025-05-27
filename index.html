@@ -1,237 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kashi Yatra | Spiritual Travel Packages</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kashi Yatra</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Open Sans', sans-serif;
-    }
     body {
-      background-color: #fefaf3;
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #fffaf0;
       color: #333;
     }
     header {
-      background: linear-gradient(to right, #e9a85c, #db7830);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      color: white;
-    }
-    .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-    }
-    nav a {
-      margin: 0 1rem;
-      text-decoration: none;
-      color: #fff;
-      font-weight: 600;
-    }
-    .lang-auth {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .lang-auth select,
-    .lang-auth button {
-      padding: 0.5rem 1rem;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    .register { background-color: #d35400; color: #fff; }
-    .login { background-color: #a04000; color: #fff; }
-
-    .hero {
-      background: url('https://upload.wikimedia.org/wikipedia/commons/e/e3/Varanasi_Ghat_with_Shiva_Statue.jpg') no-repeat center center/cover;
-      padding: 5rem 2rem;
-      color: #fff;
-      text-align: left;
-      position: relative;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      font-family: 'Playfair Display', serif;
-    }
-    .hero p {
-      margin-top: 1rem;
-      font-size: 1.2rem;
-    }
-    .hero .cta-button {
-      margin-top: 2rem;
-      background-color: #c0392b;
-      color: #fff;
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-    .section {
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-    .section h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      margin-bottom: 2rem;
-    }
-    .packages {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-    }
-    .package {
-      width: 250px;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      background-color: #fff;
-    }
-    .package img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-    .package-title {
-      background-color: #d35400;
+      background: #d97706;
       color: white;
       padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-size: 1.5rem;
       font-weight: bold;
     }
-    .reviews {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 2rem;
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
     }
-    .review {
-      width: 300px;
-      background-color: #fff;
-      border-radius: 8px;
-      padding: 1.5rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    .lang-switcher {
+      margin-left: 10px;
     }
-    .stars {
-      color: #e67e22;
-      font-size: 1.2rem;
+    .hero {
+      background: url('https://upload.wikimedia.org/wikipedia/commons/2/2b/Kashi_Viswanath_Temple.jpg') no-repeat center center/cover;
+      padding: 4rem 2rem;
+      color: white;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
       margin-bottom: 1rem;
     }
-
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 2rem; }
-      .packages, .reviews {
+    .btn {
+      background: #f59e0b;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .packages, .reviews {
+      padding: 2rem;
+      display: grid;
+      gap: 1.5rem;
+    }
+    .section-title {
+      font-size: 1.8rem;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .footer {
+      background: #1f2937;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 600px) {
+      header, .packages, .reviews {
         flex-direction: column;
-        align-items: center;
+        text-align: center;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">KA YATRA</div>
+    <div class="logo">Kashi Yatra</div>
     <nav>
       <a href="#">Home</a>
-      <a href="#">Travel Packages</a>
+      <a href="#">Packages</a>
       <a href="#">Hotels</a>
-      <a href="#">Contact Us</a>
-    </nav>
-    <div class="lang-auth">
-      <select id="language-switch">
-        <option value="en">EN</option>
-        <option value="hi">हिंदी</option>
+      <a href="#">Contact</a>
+      <select class="lang-switcher" onchange="switchLang(this.value)">
+        <option value="en">English</option>
+        <option value="hi">हिन्दी</option>
       </select>
-      <button class="register" onclick="location.href='register.html'">Register</button>
-      <button class="login" onclick="location.href='login.html'">Login</button>
-    </div>
+      <a href="#" class="btn">Register</a>
+      <a href="#" class="btn">Login</a>
+    </nav>
   </header>
 
   <section class="hero">
-    <h1 id="title">KASHI YATRA</h1>
-    <h3 id="subtitle">SPIRITUAL TRAVEL PACKAGES</h3>
-    <p id="tagline">Experience the divine with our comfortable and well-planned tours.</p>
-    <button class="cta-button" onclick="location.href='booking.html'">BOOK NOW</button>
+    <h1 id="main-heading">Spiritual Travel Packages</h1>
+    <p id="sub-heading">Experience the divine with our comfortable and well-planned tours.</p>
+    <button class="btn" id="book-now">BOOK NOW</button>
   </section>
 
-  <section class="section">
-    <h2 id="our-packages">OUR PACKAGES</h2>
-    <div class="packages">
-      <div class="package">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/Varanasi_ghats.jpg" alt="Varanasi Tour">
-        <div class="package-title" id="varanasi">Varanasi Tour</div>
-      </div>
-      <div class="package">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Sangam_Allahabad.jpg" alt="Prayagraj Tour">
-        <div class="package-title" id="prayagraj">Prayagraj Tour</div>
-      </div>
-      <div class="package">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Ayodhya_Ram_Mandir.jpg" alt="Ayodhya Tour">
-        <div class="package-title" id="ayodhya">Ayodhya Tour</div>
-      </div>
-    </div>
+  <section class="packages">
+    <div class="section-title" id="package-title">Our Packages</div>
+    <div class="card">Varanasi Tour</div>
+    <div class="card">Prayagraj Tour</div>
+    <div class="card">Ayodhya Tour</div>
   </section>
 
-  <section class="section">
-    <h2 id="reviews-title">REVIEWS</h2>
-    <div class="reviews">
-      <div class="review">
-        <div class="stars">★★★★★</div>
-        <p id="review1">“The trip was well organized and truly memorable!”</p>
-      </div>
-      <div class="review">
-        <div class="stars">★★★★★</div>
-        <p id="review2">“The experience was divine and peaceful.”</p>
-      </div>
-    </div>
+  <section class="reviews">
+    <div class="section-title" id="review-title">Reviews</div>
+    <div class="card">"The trip was well organized and truly memorable!"</div>
+    <div class="card">"The experience was divine and peaceful."</div>
   </section>
+
+  <footer class="footer">&copy; 2025 Kashi Yatra. All rights reserved.</footer>
 
   <script>
-    const translations = {
-      en: {
-        title: "KASHI YATRA",
-        subtitle: "SPIRITUAL TRAVEL PACKAGES",
-        tagline: "Experience the divine with our comfortable and well-planned tours.",
-        "our-packages": "OUR PACKAGES",
-        varanasi: "Varanasi Tour",
-        prayagraj: "Prayagraj Tour",
-        ayodhya: "Ayodhya Tour",
-        "reviews-title": "REVIEWS",
-        review1: "The trip was well organized and truly memorable!",
-        review2: "The experience was divine and peaceful."
-      },
-      hi: {
-        title: "काशी यात्रा",
-        subtitle: "आध्यात्मिक यात्रा पैकेज",
-        tagline: "हमारी आरामदायक और अच्छी योजना वाली यात्राओं के साथ दिव्यता का अनुभव करें।",
-        "our-packages": "हमारे पैकेज",
-        varanasi: "वाराणसी यात्रा",
-        prayagraj: "प्रयागराज यात्रा",
-        ayodhya: "अयोध्या यात्रा",
-        "reviews-title": "समीक्षाएं",
-        review1: "यात्रा अच्छी तरह से आयोजित थी और वास्तव में यादगार रही!",
-        review2: "अनुभव दिव्य और शांतिपूर्ण था।"
+    function switchLang(lang) {
+      if (lang === 'hi') {
+        document.getElementById('main-heading').textContent = 'धार्मिक यात्रा पैकेज';
+        document.getElementById('sub-heading').textContent = 'हमारे साथ आरामदायक और भक्ति से भरी यात्रा का अनुभव लें।';
+        document.getElementById('book-now').textContent = 'बुक करें';
+        document.getElementById('package-title').textContent = 'हमारे पैकेज';
+        document.getElementById('review-title').textContent = 'समीक्षाएँ';
+      } else {
+        document.getElementById('main-heading').textContent = 'Spiritual Travel Packages';
+        document.getElementById('sub-heading').textContent = 'Experience the divine with our comfortable and well-planned tours.';
+        document.getElementById('book-now').textContent = 'BOOK NOW';
+        document.getElementById('package-title').textContent = 'Our Packages';
+        document.getElementById('review-title').textContent = 'Reviews';
       }
-    };
-
-    document.getElementById('language-switch').addEventListener('change', function () {
-      const lang = this.value;
-      const keys = Object.keys(translations[lang]);
-      keys.forEach(key => {
-        const el = document.getElementById(key);
-        if (el) el.textContent = translations[lang][key];
-      });
-    });
+    }
   </script>
 </body>
 </html>
