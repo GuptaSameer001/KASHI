@@ -1,0 +1,40 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #f9f9f9;
+  text-align: center;
+  padding: 2rem;
+}
+
+#rotate-warning {
+  display: none;
+  background-color: #ffcccc;
+  color: red;
+  padding: 1rem;
+  font-weight: bold;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+/* Portrait Mode Style */
+@media screen and (orientation: portrait) {
+  body {
+    background-color: #e0f7fa;
+  }
+}
+
+/* Landscape Mode Style */
+@media screen and (orientation: landscape) {
+  body {
+    background-color: #ffe0b2;
+  }
+}
