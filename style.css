@@ -1,69 +1,31 @@
-style.css
-/* Reset and base styles */
+/* Default style for desktop */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #fff6e5;
+  padding: 20px;
+  font-family: Arial;
+  background-color: lightblue;
+  font-size: 20px;
+  text-align: center;
 }
 
-.navbar {
-  background-color: #e67e22;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 10px 20px;
-  position: sticky;
-  top: 0;
-}
-
-.logo {
-  font-size: 22px;
-  font-weight: bold;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.nav-links a,
-.nav-links select,
-.nav-links .btn {
-  color: white;
-  text-decoration: none;
-  background: none;
-  border: none;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.nav-links .btn {
-  background-color: #f39c12;
-  padding: 5px 10px;
-  border-radius: 4px;
-  color: white;
-}
-
-/* Hamburger menu styles */
-.hamburger {
-  display: none;
-  font-size: 26px;
-  cursor: pointer;
-}
-
-#menu-toggle {
-  display: none;
-}
-
+/* Mobile screen ke liye (width 768px se kam) */
 @media (max-width: 768px) {
-  .hamburger {
-    display: block;
+  body {
+    background-color: lightgreen;
+    font-size: 16px;
   }
+}
 
-  .nav-links {
-    flex-direction: column;
-    width: 100%;
-    display: non
+/* Landscape mode ke liye */
+@media screen and (orientation: landscape) {
+  body {
+    background-color: #d1ecf1;
+  }
+}
+
+/* Portrait mode ke liye */
+@media screen and (orientation: portrait) {
+  body {
+    background-color: #fff3cd;
+  }
+}
